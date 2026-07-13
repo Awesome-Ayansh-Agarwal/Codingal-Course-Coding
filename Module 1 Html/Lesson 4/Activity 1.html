@@ -1,69 +1,353 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Module 1 Lesson 4 Activity 2 - Aquatic Beats Party</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌊 Aquatic Beats Party - An Underwater Adventure 🎵</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #2d5c8c 100%);
+        min-height: 100vh;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+        pointer-events: none;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 60px;
+        animation: slideDown 0.8s ease-out;
+      }
+
+      h1 {
+        font-size: 4em;
+        color: #fff;
+        text-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 40px rgba(100, 200, 255, 0.5);
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+        animation: glow 2s ease-in-out infinite;
+      }
+
+      .subtitle {
+        font-size: 1.3em;
+        color: #e0f7ff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        font-style: italic;
+      }
+
+      .section {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 40px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      .section:nth-child(odd) {
+        animation-delay: 0.2s;
+      }
+
+      .section:nth-child(even) {
+        animation-delay: 0.4s;
+      }
+
+      h2 {
+        color: #667eea;
+        font-size: 2em;
+        margin-bottom: 20px;
+        border-bottom: 3px solid #764ba2;
+        padding-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      p {
+        color: #333;
+        font-size: 1.1em;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+
+      .media-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      audio, video {
+        max-width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+
+      audio:hover, video:hover {
+        transform: scale(1.02);
+      }
+
+      audio {
+        width: 100%;
+        max-width: 500px;
+      }
+
+      video {
+        width: 100%;
+        max-width: 600px;
+        aspect-ratio: 16 / 9;
+      }
+
+      .rocket-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+        margin-bottom: 40px;
+      }
+
+      .rocket-section img {
+        max-width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        animation: bounce 2s ease-in-out infinite;
+      }
+
+      .rocket-section:nth-child(2) img {
+        animation-delay: 0.3s;
+      }
+
+      iframe {
+        border-radius: 15px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+
+      iframe:hover {
+        transform: scale(1.02);
+      }
+
+      .iframe-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      button {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 15px 40px;
+        font-size: 1.1em;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        transition: all 0.3s ease;
+        margin-top: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+      }
+
+      button:active {
+        transform: translateY(0);
+      }
+
+      .fun-emoji {
+        display: inline-block;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .emoji-1 { animation-delay: 0s; }
+      .emoji-2 { animation-delay: 0.5s; }
+      .emoji-3 { animation-delay: 1s; }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes glow {
+        0%, 100% {
+          text-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 40px rgba(100, 200, 255, 0.5);
+        }
+        50% {
+          text-shadow: 0 0 30px rgba(0, 255, 255, 1), 0 0 60px rgba(100, 200, 255, 0.8);
+        }
+      }
+
+      @keyframes bounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5em;
+        }
+
+        h2 {
+          font-size: 1.5em;
+        }
+
+        .rocket-section {
+          grid-template-columns: 1fr;
+        }
+
+        .section {
+          padding: 20px;
+        }
+      }
+    </style>
   </head>
 
   <body>
-    <center>
-      <h2>Step 1: Meet the Rocket</h2>
-<img src="rocket.png" alt="Rocket Ready To Launch" width="300" height="300">
-      <p>This rocket will take us to a new planet.</p>
+    <div class="container">
+      <header>
+        <h1>
+          <span class="fun-emoji emoji-1">🚀</span>
+          Aquatic Beats Party
+          <span class="fun-emoji emoji-3">🎵</span>
+        </h1>
+        <p class="subtitle">Where Music Meets The Ocean 🌊✨</p>
+      </header>
 
-      <h2>Step 2: Our Space Destination</h2>
-      <img src="planet.png" alt="Alien Planet" width="300" height="300">
-      <p>We found a beautiful planet far away from Earth.</p>
+      <div class="rocket-section">
+        <div>
+          <h2>🚀 Step 1: Meet the Rocket</h2>
+          <p>This rocket will take us to a new planet. Strap in and prepare for an amazing journey through space to discover the wonders that await us!</p>
+        </div>
+        <img src="rocket.png" alt="Rocket Ready To Launch" width="300" height="300">
+      </div>
 
-      <h1>Aquatic Beats Party</h1>
+      <div class="rocket-section">
+        <img src="planet.png" alt="Alien Planet" width="300" height="300">
+        <div>
+          <h2>🪐 Step 2: Our Space Destination</h2>
+          <p>We found a beautiful planet far away from Earth. This distant world holds incredible mysteries and wonders waiting to be explored!</p>
+        </div>
+      </div>
 
-      <h2>The ocean stage is ready!</h2>
+      <section class="section">
+        <h2>🎶 The Ocean Stage is Ready!</h2>
+        <p>
+          Play the music and watch the aquatic animals swim through their beautiful underwater world. 
+          This immersive experience combines stunning visuals with fantastic music to create an unforgettable adventure!
+        </p>
+        <div class="media-container">
+          <audio controls loop>
+            <source src="music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </section>
 
-      <p>
-        Play the music and watch the aquatic animals swim through their
-        beautiful underwater world.
-      </p>
-<audio controls loop>
-<source src="music.mp3" type="audio/mpeg">
-</audio>
+      <section class="section">
+        <h2>🎬 The Ocean Show is Live!</h2>
+        <p>
+          This webpage uses the audio tag for music and the video tag to bring the aquatic animal adventure to life. 
+          Experience the magic of HTML5 multimedia as creatures of the deep perform for your entertainment!
+        </p>
+        <div class="media-container">
+          <video controls loop poster="poster.jpg">
+            <source src="aqua.mp4">
+            Your browser does not support the video element.
+          </video>
+        </div>
+      </section>
 
-      <br /><br />
-
-
-      <h2>The ocean show is live!</h2>
-
-      <p>
-        This webpage uses the audio tag for music and the video tag to bring the
-        aquatic animal adventure to life.
-      </p>
-
-<video controls loop width="500" height="350" poster="poster.jpg">
-<source src="aqua.mp4">
-
-</video>
-
-<div>
-<iframe
-
-src="https://scratch.mit.edu/projects/60917032/embed"
-
-allowtransparency="true"
-
-width="500"
-
-height="400"
-
-frameborder="0"
-
-scrolling="no"
-
-allowfullscreen>
-
-</iframe>
-</div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EXF-mDjefO8?si=9AN01WZr_l9uF77t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </center>
+      <section class="section">
+        <h2>🎨 Interactive Creations</h2>
+        <p>Check out these amazing interactive projects created with creativity and code!</p>
+        <div class="iframe-container">
+          <iframe
+            src="https://scratch.mit.edu/projects/60917032/embed"
+            allowtransparency="true"
+            width="500"
+            height="400"
+            frameborder="0"
+            scrolling="no"
+            allowfullscreen>
+          </iframe>
+          <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/EXF-mDjefO8?si=9AN01WZr_l9uF77t" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
 
