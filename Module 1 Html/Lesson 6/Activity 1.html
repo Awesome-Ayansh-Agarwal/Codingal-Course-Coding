@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M1 L6 DOCTOR'S APPOINTMENT FORM</title>
+  </head>
+  <body>
+    <h1>Ipshita's bad hospital</h1>
+    <p>Fill in the form below to book your APPOINTMENT</p>
+    <hr />
+
+    <form style="margin-top: 40px">
+      <fieldset>
+        <legend><h3>Personal Details</h3></legend>
+        <label for="Name">Patient's Name</label><br />
+        <input
+          type="text"
+          name="name"
+          id="Name"
+          placeholder="Enter Your Full Name"
+        /><br /><br />
+
+        <label for="Patient-id">Patient ID</label><br />
+        <input
+          type="password"
+          name="Patient-id"
+          id="Patient-id"
+          placeholder="Enter Your Patient ID"
+        /><br /><br />
+
+        <label for="Dob">Date Of Birth</label><br />
+        <input type="date" name="Dob" id="Dob" /><br /><br />
+      </fieldset>
+
+      <br />
+
+      <fieldset>
+        <legend><h3>Visit Details</h3></legend>
+
+        <label for="DOCTOR">Choose Ur DOCTOR </label><br /><br />
+        <select name="DOCTOR" id="DOCTOR">
+          <option value="">Select Any One</option>
+          <option value="dr-ipshita">
+            Dr.Ipshita-Being Dumb in EVERYTHING
+          </option>
+          <option value="dr-awesome-ayansh">
+            Dr Ayansh-Being Smart In Brain Surgery
+          </option></select
+        ><br /><br />
+
+        <label>Why are u visting?</label><br />
+        <input type="radio" name="reason" id="fever" /> fever <br />
+        <input type="radio" name="reason" id="cold" /> Cold <br />
+        <input type="radio" name="reason" id="Headache" /> Headache <br />
+
+        <br />
+
+        <label for="Notes">Any Notes For the Doctor?</label><br><br><br>
+        <textarea name="Notes" id="Notes" rows="8" cols="40"></textarea>
+      </fieldset>
+      <br />
+
+      <fieldset>
+        <legend>Preffered day of Visit</legend>
+        <label> <input type="checkbox" value="Monday" />Monday <br /> </label>
+        <label> <input type="checkbox" value="Tuesday" />Tuesday<br /> </label>
+        <label>
+          <input type="checkbox" value="Wednesday" />Wednesday<br />
+        </label>
+        <label>
+          <input type="checkbox" value="Thursday" />Thursday<br />
+        </label>
+        <label> <input type="checkbox" value="Friday" /> Friday<br /> </label>
+        <label>
+          <input type="checkbox" value="Saturday" /> Saturday<br />
+        </label>
+
+        <label> <input type="checkbox" value="Sunday" /> Sunday<br /> </label>
+      </fieldset>
+
+      <br />
+
+      <input type="submit" value="Book My APPOINTMENT" />
+    </form>
+  </body>
+</html>
