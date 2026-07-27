@@ -1,0 +1,58 @@
+body {
+  background-color: lightskyblue;
+  background: linear-gradient(45deg, lightskyblue, black);
+  background-repeat: no-repeat;
+  height: 100vh;
+  font-family: "Arial";
+}
+
+.page-header {
+  color: white;
+  text-align: center;
+  background: #020024;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.fact-card {
+  background-color: midnightblue;
+  color: white;
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.fact-card h2 {
+  color: greenyellow;
+}
+
+.star {
+  width: 50px;
+  height: 50px;
+  background-color: gold;
+  border-radius: 50%;
+  animation: loki 2s infinite alternate;
+  text-align: center;
+}
+
+@keyframes loki {
+  0% {
+    background-color: gold;
+    transform: rotate(0) ;
+  }
+  50% {
+    background-color: lightgreen;
+    transform: rotate(360deg);
+  }
+
+  100% {
+    background-color: green;
+    transform: rotate(0);
+  }
+}
