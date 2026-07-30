@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loki Character Card</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(circle at top, #1f1a3d 0%, #06070b 55%, #000000 100%);
+      color: #f7f1d0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+
+    h1 {
+      color: #f7d98b;
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 0 14px rgba(255, 215, 0, 0.45);
+    }
+
+    h2 {
+      color: #8ef0ff;
+      margin-top: 0;
+      font-size: 1.4rem;
+      text-shadow: 0 0 10px rgba(142, 240, 255, 0.3);
+    }
+
+    p {
+      color: #e8dce8;
+      line-height: 1.7;
+      margin: 8px 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 860px;
+      background: rgba(15, 16, 29, 0.9);
+      border: 1px solid rgba(255, 215, 0, 0.35);
+      border-radius: 24px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(255, 215, 0, 0.08);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero {
+      padding: 32px;
+      background: linear-gradient(135deg, rgba(122, 35, 145, 0.95), rgba(17, 44, 74, 0.95));
+      border-bottom: 1px solid rgba(255, 215, 0, 0.25);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: rgba(255, 215, 0, 0.16);
+      color: #ffe9a8;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      color: #f8e6b4;
+      font-size: 1.05rem;
+      margin: 0;
+      font-style: italic;
+    }
+
+    .content {
+      padding: 30px 32px 34px;
+    }
+
+    #cartoon-card {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+      border: 1px solid rgba(142, 240, 255, 0.18);
+      border-radius: 18px;
+      padding: 20px 22px;
+      margin: 20px 0 26px;
+      box-shadow: inset 0 0 16px rgba(142, 240, 255, 0.1);
+    }
+
+    .cartoon-detail {
+      color: #f9f3cc;
+      font-weight: 600;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .cartoon-detail:last-child {
+      border-bottom: none;
+    }
+
+    .highlight {
+      color: #ffcf6b;
+      font-weight: 700;
+    }
+
+    .footer {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <div class="badge">Marvel Edition</div>
+      <h1>My Loki Character Card</h1>
+      <p class="subtitle">A mysterious, elegant, and wonderfully chaotic favorite.</p>
+    </div>
+
+    <div class="content">
+      <p style="color: #ffb4d9; font-weight: 700; font-size: 1.05rem;">Meet my favorite character from the multiverse!</p>
+
+      <div id="cartoon-card">
+        <h2>About My Character</h2>
+        <p class="cartoon-detail"><span class="highlight">Character Name:</span> Loki</p>
+        <p class="cartoon-detail"><span class="highlight">Series Name:</span> Marvel</p>
+        <p class="cartoon-detail"><span class="highlight">Best Friend:</span> Mobius (THE GOAT)</p>
+        <p class="cartoon-detail"><span class="highlight">Favourite Food:</span> Pie</p>
+        <p class="cartoon-detail"><span class="highlight">Status:</span> God of the Multiverse, God of Stories</p>
+      </div>
+
+      <h2>Why I Like This Character</h2>
+      <p>Loki is clever, dramatic, and full of surprises. He has a sharp mind, a powerful presence, and a style that feels both dangerous and dazzling.</p>
+      <p>He also has one of the best friendships ever with Mobius, and his choices show courage, sacrifice, and heart.</p>
+      <p class="footer">He sacrificed himself to protect the multiverse, which makes him even more unforgettable.</p>
+    </div>
+  </div>
+</body>
+</html>
