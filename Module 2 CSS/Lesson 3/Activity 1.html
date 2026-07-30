@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 2 - Lesson 3 Activity 1 - My Superhero Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Griffy&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Typography — font, size, weight, colour for the whole page */
+      body {
+        background-color: skyblue;
+        color: white;
+        font-family: "Griffy";
+      }
+
+      /* Typography + Text Shadow — big bold title with an orange shadow */
+      .hero-name {
+        font-size: 60px;
+        font-weight: 400;
+        text-shadow:
+          4px 4px rgb(105, 218, 105),
+          6px 6px lightgoldenrodyellow;
+      }
+
+      /* Typography + Text Transform — tagline becomes Title Case */
+      .tagline {
+        font-size: 28px;
+        font-style: italic;
+        color: beige;
+        text-transform: capitalize;
+        text-decoration: underline;
+      }
+
+      /* Text Transform + Text Decoration — section headings in CAPS with underline */
+      .label {
+        text-transform: uppercase;
+        text-decoration: underline dashed navy;
+      }
+
+      /* Typography — powers stand out in bold green */
+      .power {
+        color: green;
+      }
+
+      /* Text Decoration — weaknesses are crossed out */
+      .weakness {
+        color: crimson;
+        text-decoration: line-through;
+      }
+
+      /* Transform — the badge is tilted to the side */
+      .badge {
+        font-size: 28px;
+        font-weight: bold;
+        color: black;
+        background-color: gold;
+        padding: 8px;
+        transform: rotate(15deg);
+        display: inline-block;
+        margin: 65px 0;
+        transition: all 1s ease-in;
+      }
+      .badge:hover {
+        letter-spacing: 5px;
+        transform: rotate(45deg);
+      }
+      /* Typography — footer text */
+      .made-by {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="hero-name">Loki</h1>
+    <p class="tagline">God of the Mulitverse</p>
+
+    <h2 class="label">Super powers</h2>
+    <p class="power">Can control time</p>
+    <p class="power">Can delete universes in the blink of an eye</p>
+
+    <h2 class="label">weaknesses</h2>
+    <p class="weakness">Thor</p>
+    <p class="weakness">Dr.Doom</p>
+
+    <div class="badge">Best Superhero</div>
+
+    <p class="made-by">Created by ___Ayansh Agarwal YAAAAAAYYYYYYYYYYY______</p>
+  </body>
+</html>
