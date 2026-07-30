@@ -1,129 +1,140 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Weather App Homepage</title>
- 
+  <title>Sky Weather App</title>
   <style>
-    /* Universal selector: applies basic settings to the full page */
     * {
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
- 
-    /* Body background uses colour, image pattern, repeat, position, and attachment */
+
     body {
-      background-color: #87ceeb;
-      background-image: radial-gradient(circle, white 2px, transparent 3px);
-      background-size: 40px 40px;
-      background-repeat: repeat;
-      background-position: top center;
-      background-attachment: fixed;
-      color: white;
+      margin: 0;
+      min-height: 100vh;
+      padding: 30px 20px;
       text-align: center;
+      color: white;
+      background:
+        linear-gradient(to bottom, #7ed6ff 0%, #a9e7ff 35%, #f9f5d7 100%);
+      overflow-x: hidden;
     }
- 
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.9) 0 2px, transparent 3px),
+        radial-gradient(circle at 80% 15%, rgba(255,255,255,0.7) 0 1.5px, transparent 2px),
+        radial-gradient(circle at 60% 10%, rgba(255,255,255,0.8) 0 2px, transparent 3px);
+      background-size: 220px 220px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
     h1 {
-      font-size: 37px;
-      color: white;
+      font-size: 2.4rem;
+      margin-bottom: 8px;
+      color: #ffffff;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
     }
- 
+
     .subtitle {
-      font-size: 18px;
-      color: #f0f8ff;
+      font-size: 1.05rem;
+      color: #f5fbff;
+      margin-bottom: 22px;
     }
- 
+
     .weather-card {
-      width: 400px;
-      border: 3px solid white;
-      border-radius: 20px;
-      background-image: linear-gradient(to bottom right, #1e90ff, #87cefa);
+      width: min(92%, 420px);
+      margin: 0 auto 28px;
+      padding: 22px;
+      border: 2px solid rgba(255,255,255,0.55);
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(30,144,255,0.85), rgba(135,206,250,0.8));
+      box-shadow: 0 15px 35px rgba(21, 89, 145, 0.25);
+      backdrop-filter: blur(8px);
     }
- 
+
     .weather-icon {
-      font-size: 70px;
-      animation: floatCloud 3s infinite alternate;
+      font-size: 4.2rem;
+      margin: 10px 0;
+      animation: floatCloud 3s ease-in-out infinite alternate;
     }
- 
+
     #temperature {
-      font-size: 48px;
+      font-size: 3rem;
       font-weight: bold;
-      color: #fffacd;
+      color: #fff8c2;
+      margin: 6px 0 12px;
     }
- 
+
     .details {
-      font-size: 25px;
-      color: white;
+      font-size: 1.05rem;
+      margin: 6px 0;
+      color: #f7fbff;
     }
- 
+
     .forecast-section {
-      width: 600px;
-      border: 3px solid white;
-      border-radius: 15px;
-      background-image: radial-gradient(circle, white, #add8e6);
+      width: min(92%, 650px);
+      margin: 0 auto;
+      padding: 20px 24px 24px;
+      border: 2px solid rgba(255,255,255,0.55);
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(173,216,230,0.7));
       color: #003366;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
     }
- 
+
     .forecast-title {
       color: #003366;
+      margin-top: 0;
+      font-size: 1.3rem;
     }
- 
+
     .day {
-      border: 2px solid #4682b4;
-      font-size: 17px;
+      border: 1px solid #7bb7d9;
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin: 10px 0;
+      font-size: 1rem;
+      background: rgba(255,255,255,0.45);
       color: #003366;
     }
- 
-    /* Group selector: styles both headings together */
+
     h2, h3 {
       color: white;
     }
- 
-    /* CSS animation using @keyframes */
+
     @keyframes floatCloud {
-      from {
-        transform: translateY(0);
-      }
- 
-      to {
-        transform: translateY(20px);
-      }
+      from { transform: translateY(0px); }
+      to { transform: translateY(12px); }
     }
   </style>
 </head>
- 
 <body>
- 
   <h1>My Weather App Homepage</h1>
- 
-  <p class="subtitle">
-    Check today's weather and plan your day better.
-  </p>
- 
+  <p class="subtitle">Check today's weather and plan your day better.</p>
+
   <div class="weather-card">
     <h2>Today's Weather</h2>
- 
-    <div class="weather-icon">Cloud</div>
- 
+    <div class="weather-icon">☁️</div>
     <p id="temperature">28°C</p>
- 
-    <p class="details">City: Dehli</p>
+    <p class="details">City: Delhi</p>
     <p class="details">Condition: Foggy</p>
     <p class="details">Humidity: 62%</p>
     <p class="details">Wind Speed: 16 km/h</p>
     <p class="details">AQI: 359</p>
   </div>
- 
+
   <h2>Weekly Forecast</h2>
- 
   <div class="forecast-section">
     <h3 class="forecast-title">Next 5 Days</h3>
- 
     <p class="day">Monday: Sunny - 30°C</p>
     <p class="day">Tuesday: Cloudy - 27°C</p>
     <p class="day">Wednesday: Rainy - 24°C</p>
     <p class="day">Thursday: Windy - 26°C</p>
     <p class="day">Friday: Stormy - 23°C</p>
   </div>
- 
 </body>
 </html>
