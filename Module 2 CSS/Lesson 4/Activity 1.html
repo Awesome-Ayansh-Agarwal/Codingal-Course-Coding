@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Module 2 - Lesson 4 - Activity 1 - My Food Menu</title>
+    <style>
+      body {
+        font-family: Arial;
+        background: #fff8f0;
+        padding: 30px;
+        text-align: center;
+      }
+
+      h1 {
+        color: #e65c00;
+      }
+
+      /* Sibling Selector - styles the paragraph right after h1 */
+      h1 + p {
+        background-color: #ffe0b2;
+        padding: 10px 20px;
+        border-radius: 8px;
+        color: rosybrown;
+      }
+
+      ul {
+        padding: 0;
+        margin-top: 20px;
+      }
+
+      /* Child Selector - styles only direct li children of ul */
+      ul > li {
+        list-style: none;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 8px;
+        margin: 6px auto;
+        background-color: rgb(16, 139, 247);
+        width: 260px;
+      }
+      /* nth-child - highlights the 3rd item as Chef's Special */
+      ul > li:nth-child(3) {
+        background-color: yellow;
+        color: orangered;
+      }
+      .desc {
+        color: #555555;
+        margin-top: 20px;
+        font-size: 15px;
+        width: 400px;
+        margin: 0 auto;
+      }
+
+      /* first-letter - makes the first letter big and bold */
+      .desc::first-line {
+        font-size: 200%;
+        color: gold;
+        font-weight: bold;
+        font-style: italic;
+        text-shadow:
+          4px 4px rgb(105, 218, 105),
+          6px 6px lightgoldenrodyellow;
+      }
+      .links {
+        margin-top: 25px;
+      }
+
+      /* Hover Effect - links glow when mouse moves over them */
+      a {
+        color: #e65c00;
+        font-size: 15px;
+        padding: 8px 18px;
+        margin: 0 12px;
+        border: 2px solid #e65c00;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.3s linear;
+      }
+
+      a:hover {
+        background-color: #e65c00;
+        color: whitesmoke;
+  display: inline-block;
+  transform: rotate(90deg);
+}
+
+      
+    </style>
+  </head>
+  <body>
+    <h1>My Food Menu</h1>
+    <p>Pick your favourite dish and dig in!</p>
+
+    <ul>
+      <li>Pizza</li>
+      <li>Burger</li>
+      <li>Tacos — Chef's Special!</li>
+      <li>Noodles</li>
+      <li>Ice Cream</li>
+    </ul>
+
+    <p class="desc">
+      Every dish on this menu is made with love and loads of flavour. Try them
+      all and find your favourite!
+    </p>
+
+    <div class="links">
+      <a href="#">Order Now</a>
+      <a href="#">See More</a>
+    </div>
+  </body>
+</html>
