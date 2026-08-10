@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Ice Cream Order</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #fff9fb 0%, #ffe2f2 25%, #ffc7de 55%, #ff9dc3 100%);
+      color: #4a2c2a;
+      padding: 24px 12px;
+    }
+
+    .order-box {
+      width: min(92vw, 540px);
+      background: rgba(255,255,255,0.9);
+      border: 3px solid rgba(255, 105, 180, 0.9);
+      border-radius: 30px;
+      padding: 28px 22px;
+      box-shadow: 0 22px 45px rgba(196, 95, 152, 0.22);
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      text-align: center;
+      background: linear-gradient(135deg, #ff5ca8, #9f4dff, #ffae48);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .summary-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .summary-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, #fff0f7, #ffe2f0);
+      border: 2px solid #ffc3d8;
+      border-radius: 14px;
+      padding: 12px 16px;
+      font-weight: 700;
+      color: #5c2a4a;
+    }
+
+    .totals {
+      margin-top: 18px;
+      border-top: 2px dashed #ff8dc4;
+      padding-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .totals div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      color: #5c2a4a;
+    }
+
+    .total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 22px;
+      font-weight: 900;
+      color: #8a2be2;
+      margin-top: 8px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 22px;
+      text-decoration: none;
+      background: linear-gradient(135deg, #ff5ca8, #b24dff, #ff9d45);
+      color: white;
+      border-radius: 999px;
+      padding: 14px 28px;
+      font-weight: 800;
+      box-shadow: 0 12px 22px rgba(181, 76, 164, 0.28);
+    }
+
+    .track-button {
+      background: linear-gradient(135deg, #ff8fc9, #ff5ca8, #a75df7);
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="order-box">
+    <h1>Your Order</h1>
+    <ul class="summary-list" id="order-summary"></ul>
+    <div class="totals">
+      <div><span>Subtotal</span><span id="subtotal">₹0</span></div>
+      <div><span>CGST (2.5%)</span><span id="cgst">₹0</span></div>
+      <div><span>SGST (2.5%)</span><span id="sgst">₹0</span></div>
+      <div><span>Delivery</span><span id="delivery">₹0</span></div>
+      <div class="total"><span>Total</span><span id="total-price">₹0</span></div>
+    </div>
+    <div class="actions">
+      <a href="Project 1.html" class="back-button">Back to Menu</a>
+      <a href="track-delivery.html" class="back-button track-button">Track Ur Delivery</a>
+    </div>
+  </div>
+
+  <script>
+    const selected = JSON.parse(localStorage.getItem('selectedIceCream') || '[]');
+    const summaryList = document.getElementById('order-summary');
+    const subtotalElement = document.getElementById('subtotal');
+    const cgstElement = document.getElementById('cgst');
+    const sgstElement = document.getElementById('sgst');
+    const deliveryElement = document.getElementById('delivery');
+    const totalPrice = document.getElementById('total-price');
+
+    if (!selected.length) {
+      summaryList.innerHTML = '<li>No ice cream selected.</li>';
+      subtotalElement.textContent = '₹0';
+      cgstElement.textContent = '₹0';
+      sgstElement.textContent = '₹0';
+      deliveryElement.textContent = '₹0';
+      totalPrice.textContent = '₹0';
+    } else {
+      let subtotal = 0;
+
+      selected.forEach((item) => {
+        subtotal += item.price;
+        const li = document.createElement('li');
+        li.innerHTML = `<span>${item.name}</span><span>₹${item.price}</span>`;
+        summaryList.appendChild(li);
+      });
+
+      const cgst = subtotal * 0.025;
+      const sgst = subtotal * 0.025;
+      const delivery = subtotal > 0 ? 40 : 0;
+      const total = subtotal + cgst + sgst + delivery;
+
+      subtotalElement.textContent = '₹' + subtotal;
+      cgstElement.textContent = '₹' + cgst.toFixed(2);
+      sgstElement.textContent = '₹' + sgst.toFixed(2);
+      deliveryElement.textContent = '₹' + delivery;
+      totalPrice.textContent = '₹' + total.toFixed(2);
+    }
+  </script>
+</body>
+</html>
