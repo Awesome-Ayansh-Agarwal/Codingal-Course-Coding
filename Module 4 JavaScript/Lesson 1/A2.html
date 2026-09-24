@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="myheading"></h1>
+    <p id="mypara"></p>
+    <script>
+      // This is a singleline comment. These are note that developers write toexplain their code
+      // /* These are
+      // multiline comments */
+
+      // this is  variable
+      let name = "Ayansh Agarwal";
+      let age = 119;
+      // STRING CONCATENATION
+      document.getElementById("myheading").innerHTML =
+        "My name is  " + name + " and I am " + age + " years old"; //string
+      // STRING INTERPOLATION
+      document.getElementById("myheading").innerHTML =
+        `My name is  ${name} and I am ${age} years old :o .`;
+      let x = 10;
+      let y = 10;
+
+      document.getElementById("mypara").innerHTML = x == y;
+
+      // 1=ASSIGNMENT OPERATOR
+      // 2= EQUALITY OPERATOR
+
+      // COMPARISON OPERATORS ( < > == >=) ALWAYS GIVE A TRUE/FALSE RESULT
+    </script>
+  </body>
+</html>
