@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My zoo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: aliceblue;
+        text-align: center;
+        padding: 30px;
+      }
+      h1 {
+        color: greenyellow;
+      }
+      #zoo {
+        border: 2px solid greenyellow;
+        width: 300px;
+        margin: 16px auto;
+        padding: 12px;
+        border-radius: 10px;
+        background: white;
+      }
+      .zone {
+        border: 1px solid greenyellow;
+        margin: 6px 0;
+        padding: 8px 12px;
+        border-radius: 6px;
+        text-align: left;
+      }
+      button {
+        background-color: silver;
+        color: white;
+        padding: 10px 24px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Zoo</h1>
+    <p>Use Javascript and the DOM to add animals to each cage!</p>
+    <div id="zoo">
+      <div class="zone">zone <span id="zone1"></span></div>
+      <div class="zone">zone <span id="zone2"></span></div>
+      <div class="zone">zone <span id="zone3"></span></div>
+      <div class="zone">Total animals <span id="total"></span></div>
+    </div>
+
+    <br />
+
+    <button onclick="openzoo()">OPEN THE ZOO!</button>
+    <p id="zoo-status"></p>
+    <script>
+      function openzoo() {
+        /*Task 1:Add ur first animal to zone 1 */
+        document.getElementById("zone1").innerHTML = "Lion";
+        /*Task 2:Add ur first animal to zone 2 */
+        document.getElementById("zone2").innerHTML = "Elephant";
+        /*Task 3:Add ur first animal to zone 3 */
+        document.getElementById("zone3").innerHTML = "Penguin";
+        /*Task 4:Show the total number of animals */
+        document.getElementById("total").innerHTML = "3";
+        /*Task 5:Change the zoo background colour */
+        document.getElementById("zoo").style.backgroundColor = "lightgreen";
+        /*Task 6: Use the document object to show the page title */
+        document.getElementById("zoo-status").innerHTML =
+          document.title + "is now open!";
+      }
+    </script>
+  </body>
+</html>
